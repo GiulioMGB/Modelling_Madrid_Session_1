@@ -23,7 +23,7 @@ class Point:
 
         :return:
         """
-        return (math.sqrt(self.x**2 + self.y**2))
+        return math.sqrt(self.x**2 + self.y**2)
 
     def __gt__(self, other):
         """
@@ -41,24 +41,25 @@ class Point:
         """
         return self.distance_origin() == other.distance_origin()
 
-a = Point(2, 3)
-b = Point(7, 9)
+if __name__ == "__main__":
+    a = Point(2, 3)
+    b = Point(7, 9)
 
-print(f"a=({a.x}, {a.y})")
-print(f"b=({b.x}, {b.y})")
+    print(f"a=({a.x}, {a.y})")
+    print(f"b=({b.x}, {b.y})")
 
 
-points = []
-for _ in range(5):
-    x = random.randint(-100, 100)
-    y = random.randint(-100, 100)
-    random_point = Point(x, y)
-    points.append(random_point)
+    points = []
+    for _ in range(5):
+        x = random.randint(-100, 100)
+        y = random.randint(-100, 100)
+        random_point = Point(x, y)
+        points.append(random_point)
 
-for point in points:
-    print(f"p({point.x}, {point.y})")
+    for point in points:
+        print(f"p({point.x}, {point.y})")
 
-print("Printing point value:", points[0])
-print(points)
-a = Point(3,4)
-print(f"distance to origin: a = {a.distance_origin()}")
+    print("Printing point value:", points[0])
+    print(points)
+    a = Point(3,4)
+    print(f"distance to origin: a = {a.distance_origin()}")
